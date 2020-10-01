@@ -1,0 +1,256 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+    <title>Woodside Class of 1971</title>
+    <script language="JavaScript">
+    //document.captureEvents(Event.KEYPRESS);
+    window.addEventListener('keypress',keyhandler,true);
+    function keyhandler(evt) {
+      var key = (evt.which) ? evt.which : event.keyCode;
+      switch (key) {
+      case 46:
+      case 62:
+         window.location="thumb5.html";
+         evt.stopPropagation();
+         break;
+      case 44:
+      case 60:
+         window.location="thumb3.html";
+         evt.stopPropagation();
+         break;
+      case 85:
+      case 117:
+         window.location="../index.html";
+         evt.stopPropagation();
+         break;
+    
+      }
+    }
+    </script>
+    <script src="https://hammerjs.github.io/dist/hammer.js"></script>
+    <script>
+      function detectswipe(el,func) {
+	  swipe_det = new Object();
+	  swipe_det.sX = 0; swipe_det.sY = 0; swipe_det.eX = 0; swipe_det.eY = 0;
+	  var min_x = 30;  //min x swipe for horizontal swipe
+	  var max_x = 30;  //max x difference for vertical swipe
+	  var min_y = 50;  //min y swipe for vertical swipe
+	  var max_y = 60;  //max y difference for horizontal swipe
+	  var direc = "";
+	  ele = document.getElementById(el);
+	  ele.addEventListener('touchstart',function(e){
+	      stm = e.timeStamp;
+	      var t = e.touches[0];
+	      swipe_det.sX = t.screenX;
+	      swipe_det.sY = t.screenY;
+	  },false);
+	  ele.addEventListener('touchmove',function(e){
+	      e.preventDefault();
+	      var t = e.touches[0];
+	      swipe_det.eX = t.screenX;
+	      swipe_det.eY = t.screenY;
+	  },false);
+	  ele.addEventListener('touchend',function(e){
+	      var slope = ((swipe_det.eY-swipe_det.sY)/(swipe_det.eX-swipe_det.sX));
+	      etm = e.timeStamp;
+	      if (etm - stm < 100) {
+	      //horizontal detection
+		  if (Math.abs(slope) < 0.5) {
+		      if (swipe_det.eX-swipe_det.sX > 0) {
+			  direc = "r"
+		      } else {
+			  direc = "l"
+		      }
+		  }
+	      //vertical detection
+	      else if (Math.abs(slope) > 2) {
+		      if (swipe_det.eY-swipe_det.sY > 0) {
+			  direc = "d"
+		      } else {
+			  direc = "u"
+		      }
+		  }
+	      if (direc != "") {
+		  if(typeof func == 'function') func(el,direc);
+	      }
+	      }
+	      direc = "";
+	      swipe_det.sX = 0; swipe_det.sY = 0; swipe_det.eX = 0; swipe_det.eY = 0;
+	  },false);
+      }
+      function hswipe(el,direc) {
+	  if (direc=="l") { window.location="thumb5.html"; }
+	  if (direc=="r") {window.location="thumb3.html"; }
+      }
+    </script>
+  </head>
+  <body id='wholepage' onload="detectswipe('wholepage',hswipe)"  onKeyPress = "keyhandler(event)"
+        bgcolor="#FFFFFF" vlink="#000000" link="#002085" alink="0000FF">
+  <table>
+   <tr>
+    <td valign="top">
+    <table border="0" cellpadding="0" cellspacing="0" align="center"
+      valign="top" width="650">
+
+      <tr>
+	<td>
+	  <table cellpadding="6" cellspacing="0" width="100%" border="0" bgcolor="#90a080" ><tr><td>
+	  <table cellpadding="0" cellspacing="0" border="0"  width="100%">
+	    <tr>
+	      <td valign=middle align=left>
+		<font size=4 color="#FFFFFF">Woodside Class of 1971</font>
+	      </td>
+	      <td align="right">
+		<font size=2 color="#FFFFFF">281 images</font>
+	      </td>
+	    </tr>
+	    <tr>
+	      <td colspan="2">
+		<a href = "tree.html"><font size=2 color="#000082"><b>tree</b></font></a>
+<font  size=2 color="#000000"> <b>::</b> </font><font  size=2 color="#000082"><b>Woodside Class of 1971</b></font>
+	      </td>
+	    </tr>
+
+	  </table>
+	  </td></tr></table>
+	</td>
+      </tr>
+
+      <tr>
+	<td>
+	  <table border="0" cellpadding="4" cellspacing="0" align="left" >
+	    <tr>
+	      <td valign="top">
+		
+	      </td>
+	    </tr>
+	  </table>
+	</td>
+      </tr>
+      <tr>
+	<td>&nbsp;</td>
+      </tr>
+
+      <tr>
+	<td bgcolor ="#90a080">
+	  <table cellpadding="6" cellspacing="0" width="100%" border="0"><tr><td>
+	  <table cellpadding="0" cellspacing="0" width="100%" border="0">
+	    <tr>
+	      <td align="left">
+		<font size="3" color="#FFFFFF">Thumbnails</font>
+	      </td>
+	      <td align="right" valign=bottom>
+		<font size="3" color="#000000">5/8</font>
+	      </td>
+	    </tr>
+	    <tr>
+	      <td align="left"><a href="thumb3.html"><font size=\\
+"2\" color=\"#000082\">Previous [<] </font></a></td>
+	      <td align="right"><a href="thumb5.html"><font size=\\
+"2\" color=\"#000082\">Next [>]</font></a></td>	      
+	    </tr>
+	  </table>
+	  </td></tr></table>
+
+	</td> 
+      </tr>
+      <tr>
+	<td>	  	  
+	  <table  border="0" cellpadding="5" cellspacing="0" bgcolor="white" width="100%">
+	    <tr>
+	      <td valign = "top" align="center">
+		<table border="0" cellpadding="5" cellspacing="0" width="100%"><td align="center" valign="bottom"><table cellspacing="0" cellpadding="0" border="0"><tr align="center"><td><img src="./Lynne Ambrosini Sue Davison museum_pre.jpg" width=150 height=102 border="0" ></td></tr><tr><td bgcolor="#a8b898">&nbsp;<A HREF="Lynne Ambrosini Sue Davison museum_Sm.jpg.144.html"><font color="#0000a0">Sm</font></A> <A HREF="Lynne Ambrosini Sue Davison museum_Lg.jpg.144.html"><font color="#0000a0">Lg</font></A> <A HREF="Lynne Ambrosini Sue Davison museum_XL.jpg.144.html"><font color="#0000a0">XL</font></A></td></tr></table></td>
+<td align="center" valign="bottom"><table cellspacing="0" cellpadding="0" border="0"><tr align="center"><td><img src="./Lynne Ambrosini hat_pre.jpg" width=117 height=150 border="0" ></td></tr><tr><td bgcolor="#a8b898">&nbsp;<A HREF="Lynne Ambrosini hat_Sm.jpg.145.html"><font color="#0000a0">Sm</font></A> <A HREF="Lynne Ambrosini hat_Lg.jpg.145.html"><font color="#0000a0">Lg</font></A> <A HREF="Lynne Ambrosini hat_XL.jpg.145.html"><font color="#0000a0">XL</font></A></td></tr></table></td>
+<td align="center" valign="bottom"><table cellspacing="0" cellpadding="0" border="0"><tr align="center"><td><img src="./Lynne Ambrosini hat2_pre.jpg" width=150 height=103 border="0" ></td></tr><tr><td bgcolor="#a8b898">&nbsp;<A HREF="Lynne Ambrosini hat2_Sm.jpg.146.html"><font color="#0000a0">Sm</font></A> <A HREF="Lynne Ambrosini hat2_Lg.jpg.146.html"><font color="#0000a0">Lg</font></A> <A HREF="Lynne Ambrosini hat2_XL.jpg.146.html"><font color="#0000a0">XL</font></A></td></tr></table></td>
+<td align="center" valign="bottom"><table cellspacing="0" cellpadding="0" border="0"><tr align="center"><td><img src="./Lynne Ambrosini_pre.jpg" width=150 height=117 border="0" ></td></tr><tr><td bgcolor="#a8b898">&nbsp;<A HREF="Lynne Ambrosini_Sm.jpg.147.html"><font color="#0000a0">Sm</font></A> <A HREF="Lynne Ambrosini_Lg.jpg.147.html"><font color="#0000a0">Lg</font></A> <A HREF="Lynne Ambrosini_XL.jpg.147.html"><font color="#0000a0">XL</font></A></td></tr></table></td>
+</tr><tr>
+<td align="center" valign="bottom"><table cellspacing="0" cellpadding="0" border="0"><tr align="center"><td><img src="./Mark Carilli_pre.jpg" width=129 height=150 border="0" ></td></tr><tr><td bgcolor="#a8b898">&nbsp;<A HREF="Mark Carilli_Sm.jpg.148.html"><font color="#0000a0">Sm</font></A> <A HREF="Mark Carilli_Lg.jpg.148.html"><font color="#0000a0">Lg</font></A></td></tr></table></td>
+<td align="center" valign="bottom"><table cellspacing="0" cellpadding="0" border="0"><tr align="center"><td><img src="./Mark Murphy 2_pre.jpg" width=150 height=116 border="0" ></td></tr><tr><td bgcolor="#a8b898">&nbsp;<A HREF="Mark Murphy 2_Sm.jpg.149.html"><font color="#0000a0">Sm</font></A> <A HREF="Mark Murphy 2_Lg.jpg.149.html"><font color="#0000a0">Lg</font></A> <A HREF="Mark Murphy 2_XL.jpg.149.html"><font color="#0000a0">XL</font></A></td></tr></table></td>
+<td align="center" valign="bottom"><table cellspacing="0" cellpadding="0" border="0"><tr align="center"><td><img src="./Mark Murphy toasting_pre.jpg" width=139 height=150 border="0" ></td></tr><tr><td bgcolor="#a8b898">&nbsp;<A HREF="Mark Murphy toasting_Sm.jpg.150.html"><font color="#0000a0">Sm</font></A> <A HREF="Mark Murphy toasting_Lg.jpg.150.html"><font color="#0000a0">Lg</font></A></td></tr></table></td>
+<td align="center" valign="bottom"><table cellspacing="0" cellpadding="0" border="0"><tr align="center"><td><img src="./Mark Murphy_pre.jpg" width=92 height=150 border="0" ></td></tr><tr><td bgcolor="#a8b898">&nbsp;<A HREF="Mark Murphy_Sm.jpg.151.html"><font color="#0000a0">Sm</font></A> <A HREF="Mark Murphy_Lg.jpg.151.html"><font color="#0000a0">Lg</font></A> <A HREF="Mark Murphy_XL.jpg.151.html"><font color="#0000a0">XL</font></A></td></tr></table></td>
+</tr><tr>
+<td align="center" valign="bottom"><table cellspacing="0" cellpadding="0" border="0"><tr align="center"><td><img src="./Marta McQuarter_pre.jpg" width=92 height=150 border="0" ></td></tr><tr><td bgcolor="#a8b898">&nbsp;<A HREF="Marta McQuarter_Sm.jpg.152.html"><font color="#0000a0">Sm</font></A> <A HREF="Marta McQuarter_Lg.jpg.152.html"><font color="#0000a0">Lg</font></A> <A HREF="Marta McQuarter_XL.jpg.152.html"><font color="#0000a0">XL</font></A></td></tr></table></td>
+<td align="center" valign="bottom"><table cellspacing="0" cellpadding="0" border="0"><tr align="center"><td><img src="./Mary Rob Mike Marian Ed David John Sue Karen 1973_pre.jpg" width=150 height=99 border="0" ></td></tr><tr><td bgcolor="#a8b898">&nbsp;<A HREF="Mary Rob Mike Marian Ed David John Sue Karen 1973_Sm.jpg.153.html"><font color="#0000a0">Sm</font></A> <A HREF="Mary Rob Mike Marian Ed David John Sue Karen 1973_Lg.jpg.153.html"><font color="#0000a0">Lg</font></A> <A HREF="Mary Rob Mike Marian Ed David John Sue Karen 1973_XL.jpg.153.html"><font color="#0000a0">XL</font></A></td></tr></table></td>
+<td align="center" valign="bottom"><table cellspacing="0" cellpadding="0" border="0"><tr align="center"><td><img src="./Mary Watt (2)_pre.jpg" width=119 height=150 border="0" ></td></tr><tr><td bgcolor="#a8b898">&nbsp;<A HREF="Mary Watt (2)_Sm.jpg.154.html"><font color="#0000a0">Sm</font></A> <A HREF="Mary Watt (2)_Lg.jpg.154.html"><font color="#0000a0">Lg</font></A> <A HREF="Mary Watt (2)_XL.jpg.154.html"><font color="#0000a0">XL</font></A></td></tr></table></td>
+<td align="center" valign="bottom"><table cellspacing="0" cellpadding="0" border="0"><tr align="center"><td><img src="./Mary Watt (3)_pre.jpg" width=150 height=100 border="0" ></td></tr><tr><td bgcolor="#a8b898">&nbsp;<A HREF="Mary Watt (3)_Sm.jpg.155.html"><font color="#0000a0">Sm</font></A> <A HREF="Mary Watt (3)_Lg.jpg.155.html"><font color="#0000a0">Lg</font></A> <A HREF="Mary Watt (3)_XL.jpg.155.html"><font color="#0000a0">XL</font></A></td></tr></table></td>
+</tr><tr>
+<td align="center" valign="bottom"><table cellspacing="0" cellpadding="0" border="0"><tr align="center"><td><img src="./Mary Watt 2_pre.jpg" width=92 height=150 border="0" ></td></tr><tr><td bgcolor="#a8b898">&nbsp;<A HREF="Mary Watt 2_Sm.jpg.156.html"><font color="#0000a0">Sm</font></A> <A HREF="Mary Watt 2_Lg.jpg.156.html"><font color="#0000a0">Lg</font></A> <A HREF="Mary Watt 2_XL.jpg.156.html"><font color="#0000a0">XL</font></A></td></tr></table></td>
+<td align="center" valign="bottom"><table cellspacing="0" cellpadding="0" border="0"><tr align="center"><td><img src="./Mary Watt Asleep_pre.jpg" width=150 height=114 border="0" ></td></tr><tr><td bgcolor="#a8b898">&nbsp;<A HREF="Mary Watt Asleep_Sm.jpg.157.html"><font color="#0000a0">Sm</font></A> <A HREF="Mary Watt Asleep_Lg.jpg.157.html"><font color="#0000a0">Lg</font></A> <A HREF="Mary Watt Asleep_XL.jpg.157.html"><font color="#0000a0">XL</font></A></td></tr></table></td>
+<td align="center" valign="bottom"><table cellspacing="0" cellpadding="0" border="0"><tr align="center"><td><img src="./Mary Watt Mike Warner John Rusmore Karen Eisinga 1973_pre.jpg" width=150 height=100 border="0" ></td></tr><tr><td bgcolor="#a8b898">&nbsp;<A HREF="Mary Watt Mike Warner John Rusmore Karen Eisinga 1973_Sm.jpg.158.html"><font color="#0000a0">Sm</font></A></td></tr></table></td>
+<td align="center" valign="bottom"><table cellspacing="0" cellpadding="0" border="0"><tr align="center"><td><img src="./Mary Watt on top_pre.jpg" width=129 height=150 border="0" ></td></tr><tr><td bgcolor="#a8b898">&nbsp;<A HREF="Mary Watt on top_Sm.jpg.159.html"><font color="#0000a0">Sm</font></A> <A HREF="Mary Watt on top_Lg.jpg.159.html"><font color="#0000a0">Lg</font></A></td></tr></table></td>
+</tr><tr>
+<td align="center" valign="bottom"><table cellspacing="0" cellpadding="0" border="0"><tr align="center"><td><img src="./Mary Watt_pre.jpg" width=150 height=102 border="0" ></td></tr><tr><td bgcolor="#a8b898">&nbsp;<A HREF="Mary Watt_Sm.jpg.160.html"><font color="#0000a0">Sm</font></A> <A HREF="Mary Watt_Lg.jpg.160.html"><font color="#0000a0">Lg</font></A> <A HREF="Mary Watt_XL.jpg.160.html"><font color="#0000a0">XL</font></A></td></tr></table></td>
+<td align="center" valign="bottom"><table cellspacing="0" cellpadding="0" border="0"><tr align="center"><td><img src="./Max Crittenden_pre.jpg" width=150 height=103 border="0" ></td></tr><tr><td bgcolor="#a8b898">&nbsp;<A HREF="Max Crittenden_Sm.jpg.161.html"><font color="#0000a0">Sm</font></A> <A HREF="Max Crittenden_Lg.jpg.161.html"><font color="#0000a0">Lg</font></A> <A HREF="Max Crittenden_XL.jpg.161.html"><font color="#0000a0">XL</font></A></td></tr></table></td>
+<td align="center" valign="bottom"><table cellspacing="0" cellpadding="0" border="0"><tr align="center"><td><img src="./Max Crittendon_pre.jpg" width=106 height=150 border="0" ></td></tr><tr><td bgcolor="#a8b898">&nbsp;<A HREF="Max Crittendon_Sm.jpg.162.html"><font color="#0000a0">Sm</font></A> <A HREF="Max Crittendon_Lg.jpg.162.html"><font color="#0000a0">Lg</font></A> <A HREF="Max Crittendon_XL.jpg.162.html"><font color="#0000a0">XL</font></A></td></tr></table></td>
+<td align="center" valign="bottom"><table cellspacing="0" cellpadding="0" border="0"><tr align="center"><td><img src="./Melissa Blackmer 2_pre.jpg" width=118 height=150 border="0" ></td></tr><tr><td bgcolor="#a8b898">&nbsp;<A HREF="Melissa Blackmer 2_Sm.jpg.163.html"><font color="#0000a0">Sm</font></A> <A HREF="Melissa Blackmer 2_Lg.jpg.163.html"><font color="#0000a0">Lg</font></A> <A HREF="Melissa Blackmer 2_XL.jpg.163.html"><font color="#0000a0">XL</font></A></td></tr></table></td>
+</tr><tr>
+<td align="center" valign="bottom"><table cellspacing="0" cellpadding="0" border="0"><tr align="center"><td><img src="./Melissa Blackmer_pre.jpg" width=92 height=150 border="0" ></td></tr><tr><td bgcolor="#a8b898">&nbsp;<A HREF="Melissa Blackmer_Sm.jpg.164.html"><font color="#0000a0">Sm</font></A> <A HREF="Melissa Blackmer_Lg.jpg.164.html"><font color="#0000a0">Lg</font></A> <A HREF="Melissa Blackmer_XL.jpg.164.html"><font color="#0000a0">XL</font></A></td></tr></table></td>
+<td align="center" valign="bottom"><table cellspacing="0" cellpadding="0" border="0"><tr align="center"><td><img src="./Mike Cooley_pre.jpg" width=129 height=150 border="0" ></td></tr><tr><td bgcolor="#a8b898">&nbsp;<A HREF="Mike Cooley_Sm.jpg.165.html"><font color="#0000a0">Sm</font></A> <A HREF="Mike Cooley_Lg.jpg.165.html"><font color="#0000a0">Lg</font></A></td></tr></table></td>
+<td align="center" valign="bottom"><table cellspacing="0" cellpadding="0" border="0"><tr align="center"><td><img src="./Mike Henry_pre.jpg" width=129 height=150 border="0" ></td></tr><tr><td bgcolor="#a8b898">&nbsp;<A HREF="Mike Henry_Sm.jpg.166.html"><font color="#0000a0">Sm</font></A> <A HREF="Mike Henry_Lg.jpg.166.html"><font color="#0000a0">Lg</font></A></td></tr></table></td>
+<td align="center" valign="bottom"><table cellspacing="0" cellpadding="0" border="0"><tr align="center"><td><img src="./Mike Warner (2)_pre.jpg" width=129 height=150 border="0" ></td></tr><tr><td bgcolor="#a8b898">&nbsp;<A HREF="Mike Warner (2)_Sm.jpg.167.html"><font color="#0000a0">Sm</font></A> <A HREF="Mike Warner (2)_Lg.jpg.167.html"><font color="#0000a0">Lg</font></A></td></tr></table></td>
+</tr><tr>
+<td align="center" valign="bottom"><table cellspacing="0" cellpadding="0" border="0"><tr align="center"><td><img src="./Mike Warner 1973_pre.jpg" width=150 height=106 border="0" ></td></tr><tr><td bgcolor="#a8b898">&nbsp;<A HREF="Mike Warner 1973_Sm.jpg.168.html"><font color="#0000a0">Sm</font></A> <A HREF="Mike Warner 1973_Lg.jpg.168.html"><font color="#0000a0">Lg</font></A> <A HREF="Mike Warner 1973_XL.jpg.168.html"><font color="#0000a0">XL</font></A></td></tr></table></td>
+<td align="center" valign="bottom"><table cellspacing="0" cellpadding="0" border="0"><tr align="center"><td><img src="./Mike Warner Ed Murphy 1974_pre.jpg" width=150 height=104 border="0" ></td></tr><tr><td bgcolor="#a8b898">&nbsp;<A HREF="Mike Warner Ed Murphy 1974_Sm.jpg.169.html"><font color="#0000a0">Sm</font></A> <A HREF="Mike Warner Ed Murphy 1974_Lg.jpg.169.html"><font color="#0000a0">Lg</font></A> <A HREF="Mike Warner Ed Murphy 1974_XL.jpg.169.html"><font color="#0000a0">XL</font></A></td></tr></table></td>
+<td align="center" valign="bottom"><table cellspacing="0" cellpadding="0" border="0"><tr align="center"><td><img src="./Mike Warner_pre.jpg" width=129 height=150 border="0" ></td></tr><tr><td bgcolor="#a8b898">&nbsp;<A HREF="Mike Warner_Sm.jpg.170.html"><font color="#0000a0">Sm</font></A> <A HREF="Mike Warner_Lg.jpg.170.html"><font color="#0000a0">Lg</font></A></td></tr></table></td>
+<td align="center" valign="bottom"><table cellspacing="0" cellpadding="0" border="0"><tr align="center"><td><img src="./Moldaw Sue_pre.jpg" width=120 height=150 border="0" ></td></tr><tr><td bgcolor="#a8b898">&nbsp;<A HREF="Moldaw Sue_Sm.jpg.171.html"><font color="#0000a0">Sm</font></A> <A HREF="Moldaw Sue_Lg.jpg.171.html"><font color="#0000a0">Lg</font></A> <A HREF="Moldaw Sue_XL.jpg.171.html"><font color="#0000a0">XL</font></A></td></tr></table></td>
+</tr><tr>
+<td align="center" valign="bottom"><table cellspacing="0" cellpadding="0" border="0"><tr align="center"><td><img src="./Murphy Ed_pre.jpg" width=127 height=150 border="0" ></td></tr><tr><td bgcolor="#a8b898">&nbsp;<A HREF="Murphy Ed_Sm.jpg.172.html"><font color="#0000a0">Sm</font></A> <A HREF="Murphy Ed_Lg.jpg.172.html"><font color="#0000a0">Lg</font></A> <A HREF="Murphy Ed_XL.jpg.172.html"><font color="#0000a0">XL</font></A></td></tr></table></td>
+<td align="center" valign="bottom"><table cellspacing="0" cellpadding="0" border="0"><tr align="center"><td><img src="./Nancy Zweig Charades 2_pre.jpg" width=112 height=150 border="0" ></td></tr><tr><td bgcolor="#a8b898">&nbsp;<A HREF="Nancy Zweig Charades 2_Sm.jpg.173.html"><font color="#0000a0">Sm</font></A> <A HREF="Nancy Zweig Charades 2_Lg.jpg.173.html"><font color="#0000a0">Lg</font></A> <A HREF="Nancy Zweig Charades 2_XL.jpg.173.html"><font color="#0000a0">XL</font></A></td></tr></table></td>
+<td align="center" valign="bottom"><table cellspacing="0" cellpadding="0" border="0"><tr align="center"><td><img src="./Overalls Jim Breitmeyer_pre.jpg" width=106 height=150 border="0" ></td></tr><tr><td bgcolor="#a8b898">&nbsp;<A HREF="Overalls Jim Breitmeyer_Sm.jpg.174.html"><font color="#0000a0">Sm</font></A> <A HREF="Overalls Jim Breitmeyer_Lg.jpg.174.html"><font color="#0000a0">Lg</font></A> <A HREF="Overalls Jim Breitmeyer_XL.jpg.174.html"><font color="#0000a0">XL</font></A></td></tr></table></td>
+<td align="center" valign="bottom"><table cellspacing="0" cellpadding="0" border="0"><tr align="center"><td><img src="./Peckler Doug_pre.jpg" width=123 height=150 border="0" ></td></tr><tr><td bgcolor="#a8b898">&nbsp;<A HREF="Peckler Doug_Sm.jpg.175.html"><font color="#0000a0">Sm</font></A> <A HREF="Peckler Doug_Lg.jpg.175.html"><font color="#0000a0">Lg</font></A> <A HREF="Peckler Doug_XL.jpg.175.html"><font color="#0000a0">XL</font></A></td></tr></table></td>
+</tr><tr>
+<td align="center" valign="bottom"><table cellspacing="0" cellpadding="0" border="0"><tr align="center"><td><img src="./Pelicans_pre.jpg" width=150 height=94 border="0" ></td></tr><tr><td bgcolor="#a8b898">&nbsp;<A HREF="Pelicans_Sm.jpg.176.html"><font color="#0000a0">Sm</font></A> <A HREF="Pelicans_Lg.jpg.176.html"><font color="#0000a0">Lg</font></A> <A HREF="Pelicans_XL.jpg.176.html"><font color="#0000a0">XL</font></A></td></tr></table></td>
+<td align="center" valign="bottom"><table cellspacing="0" cellpadding="0" border="0"><tr align="center"><td><img src="./Poster - Girl_pre.jpg" width=126 height=150 border="0" ></td></tr><tr><td bgcolor="#a8b898">&nbsp;<A HREF="Poster - Girl_Sm.jpg.177.html"><font color="#0000a0">Sm</font></A> <A HREF="Poster - Girl_Lg.jpg.177.html"><font color="#0000a0">Lg</font></A> <A HREF="Poster - Girl_XL.jpg.177.html"><font color="#0000a0">XL</font></A></td></tr></table></td>
+<td align="center" valign="bottom"><table cellspacing="0" cellpadding="0" border="0"><tr align="center"><td><img src="./Poster Beach_pre.jpg" width=88 height=150 border="0" ></td></tr><tr><td bgcolor="#a8b898">&nbsp;<A HREF="Poster Beach_Sm.jpg.178.html"><font color="#0000a0">Sm</font></A> <A HREF="Poster Beach_Lg.jpg.178.html"><font color="#0000a0">Lg</font></A> <A HREF="Poster Beach_XL.jpg.178.html"><font color="#0000a0">XL</font></A></td></tr></table></td>
+<td align="center" valign="bottom"><table cellspacing="0" cellpadding="0" border="0"><tr align="center"><td><img src="./Poster Boots_pre.jpg" width=150 height=88 border="0" ></td></tr><tr><td bgcolor="#a8b898">&nbsp;<A HREF="Poster Boots_Sm.jpg.179.html"><font color="#0000a0">Sm</font></A> <A HREF="Poster Boots_Lg.jpg.179.html"><font color="#0000a0">Lg</font></A> <A HREF="Poster Boots_XL.jpg.179.html"><font color="#0000a0">XL</font></A></td></tr></table></td>
+</tr><tr>
+</table>	
+	      </td>
+	    </tr>
+	  </table>	  
+	</td>	
+      </tr>
+
+      <tr>
+	<td bgcolor ="#90a080">
+	  <table cellpadding="6" cellspacing="0" width="100%" border="0"><tr><td>
+	  <table cellpadding="0" cellspacing="0" width="100%" border="0">
+	    <tr>
+	      <td align="left">
+		<a href="thumb3.html"><font size=\\
+"2\" color=\"#000082\">Previous [<]</font></a>
+	      </td>
+	      <td align="center" ><a href="index.html"><font color="#000082">1</font></a>&nbsp;<a href="thumb1.html"><font color="#000082">2</font></a>&nbsp;<a href="thumb2.html"><font color="#000082">3</font></a>&nbsp;<a href="thumb3.html"><font color="#000082">4</font></a>&nbsp;<font color="#000000">5</font>&nbsp;<a href="thumb5.html"><font color="#000082">6</font></a>&nbsp;<a href="thumb6.html"><font color="#000082">7</font></a>&nbsp;<a href="thumb7.html"><font color="#000082">8</font></a>&nbsp;
+	      </td>
+	      <td align="right">
+		<a href="thumb5.html"><font size=\\
+"2\" color=\"#000082\">Next [>]</font></a>
+	      </td>
+	    </tr>
+	  </table>
+	  </td></tr></table>	  
+	</td>
+      </tr>
+    </table>
+  </td>
+    <td valign="top">
+    	<table cellpadding="1" cellspacing="0"  border="0" valign="top">
+  	  <tr>
+  	    <td colspan="2"> In This Album: </td>
+  	  </tr>
+  	  <tr>
+  	    <td>&nbsp; &nbsp;</td>
+  	    <td>
+  	      <table cellpadding="1" cellspacing="0" bgcolor="#a8b898" border="0">
+  		<tr><td><a href="imagelist.html"><font size="2" color="#0000a0">Image List</font></a></td></tr><tr><td><a href="index.html"><font size="2" color="#0000a0">Thumbnail Page 1</font></a></td></tr><tr><td><a href="thumb1.html"><font size="2" color="#0000a0">Thumbnail Page 2</font></a></td></tr><tr><td><a href="thumb2.html"><font size="2" color="#0000a0">Thumbnail Page 3</font></a></td></tr><tr><td><a href="thumb3.html"><font size="2" color="#0000a0">Thumbnail Page 4</font></a></td></tr><tr><td><font size="2" color="#000000">Thumbnail Page 5</font></td></tr><tr><td><a href="thumb5.html"><font size="2" color="#0000a0">Thumbnail Page 6</font></a></td></tr><tr><td><a href="thumb6.html"><font size="2" color="#0000a0">Thumbnail Page 7</font></a></td></tr><tr><td><a href="thumb7.html"><font size="2" color="#0000a0">Thumbnail Page 8</font></a></td></tr>
+  	      </table>
+  	    </td>
+  	  </tr>
+  	</table>
+    </td>
+ </tr>
+</table>
+  </body>
+
+</html>
+
